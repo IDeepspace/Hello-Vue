@@ -8,6 +8,9 @@
     <router-link to='/pass-data-in-brothers' class='link'>
       <span>兄弟组件之间的数据传递 》</span>
     </router-link>
+    <router-link to='/global-mode' class='link'>
+      <span>全局模式 》</span>
+    </router-link>
   </div>
 </template>
 

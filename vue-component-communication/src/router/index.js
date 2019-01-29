@@ -3,6 +3,7 @@ import Router from 'vue-router';
 import Home from '@/views/Home';
 import PassDataInParentChild from '@/views/PassDataInParentChild';
 import PassDataInBrothers from '@/views/PassDataInBrothers';
+import GlobalMode from '@/views/GlobalMode';
 
 Vue.use(Router);
 
@@ -22,6 +23,11 @@ export default new Router({
       path: '/pass-data-in-brothers',
       name: 'PassDataInBrothers',
       component: PassDataInBrothers,
+    },
+    {
+      path: '/global-mode',
+      name: 'GlobalMode',
+      component: GlobalMode,
     },
   ],
 });
