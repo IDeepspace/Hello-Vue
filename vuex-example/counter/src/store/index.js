@@ -6,10 +6,24 @@ Vue.use(Vuex);
 const store = new Vuex.Store({
   state: {
     count: 2,
+    showCount: false,
   },
   mutations: {
-    increment: state => (state.count += 1), // eslint-disable-line
-    decrement: state => (state.count -= 1), // eslint-disable-line
+    increment: (state) => {
+      const newState = state;
+      newState.count += 1;
+      return { ...state, newState };
+    },
+    decrement: (state) => {
+      const newState = state;
+      newState.count -= 1;
+      return { ...state, newState };
+    },
+    toggle: (state) => {
+      const newState = state;
+      newState.showCount = !newState.showCount;
+      return { ...state, newState };
+    },
   },
 });
 

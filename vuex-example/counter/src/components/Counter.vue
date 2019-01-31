@@ -1,28 +1,33 @@
 <template>
   <div class='counter'>
-    <p>{{ count }}</p>
-    <p>
-      <button @click='increment'>+</button>
-      <button @click='decrement'>-</button>
-    </p>
+    <button @click='toggle'>show/hide counter</button>
+    <div v-if='show'>
+      <p>{{ count }}</p>
+      <p>
+        <button @click='increment'>+</button>
+        <button @click='decrement'>-</button>
+      </p>
+    </div>
   </div>
 </template>
 
 <script>
-import store from '../store';
+import { mapState } from 'vuex';
 
 export default {
-  computed: {
-    count() {
-      return store.state.count;
-    },
-  },
+  computed: mapState({
+    count: state => state.count,
+    show: state => state.showCount,
+  }),
   methods: {
     increment() {
-      store.commit('increment');
+      this.$store.commit('increment');
     },
     decrement() {
-      store.commit('decrement');
+      this.$store.commit('decrement');
+    },
+    toggle() {
+      this.$store.commit('toggle');
     },
   },
 };
